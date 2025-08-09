@@ -1,0 +1,209 @@
+﻿
+body {
+	display: flex;
+	Flex-direction: column;
+	align-items: center;
+	background-image: url('../images/parchment.jpg');
+    background-attachment: fixed;
+}
+
+/*=================== styles for top menu ======================*/
+#topmenu {
+	background-color: #FFFFFF;
+	text-align: center;
+	font-size: .90em;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	margin-right: 10px;
+	color: inherit;
+	border-top: 2px solid #AB9F5F;
+	border-bottom: 2px solid #AB9F5F;
+}
+#topmenu ul {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+#topmenu li {
+	display: inline;
+	list-style-type: none;
+	padding: 0px;
+	padding-right: 1em;
+}
+
+* {box-sizing: border-box;}
+
+.img-magnifier-container {
+  text-align: center;
+  position:relative;
+}
+
+.img-magnifier-container img {
+  display: inline-block; /* Ensures it responds properly to text-align */
+}
+
+
+ /*Set the size of the magnifier glass:*/
+.img-magnifier-glass {
+  position: absolute;
+  border: 1px solid #f00;
+  width: 250px;
+  height: 125px;
+  background-color:white;
+  border-radius: 10px;
+  cursor: none;
+  z-index: 1000;
+  /* Optional: add shadow for style */
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+ }
+
+
+.img-magnifier-glass {
+  transition: opacity 0.3s ease;
+  opacity: 0;
+  display: block; /* always block, control opacity instead */
+}
+
+.img-magnifier-container:hover .img-magnifier-glass {
+  opacity: 1;
+}
+
+#footer {
+	/* border-top: 2px solid #242F24; */
+	clear: both;
+	padding: 5px;
+	text-align: center;
+}
+#footer p {
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+#footer hr {
+  border: none;
+  height: 1px;
+  background-color: black;
+  margin: 10px 0; /* optional spacing */
+}
+
+
+#top-menu {
+background-color: #FFFFFF;
+  text-align: center;
+  font-size: .90em;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-right: 10px;
+  color: inherit;
+  border-top: 2px solid #AB9F5F;
+  border-bottom: 2px solid #AB9F5F;
+  width: 100%;
+  height: 70;
+}
+
+#glassToggle {
+	  background-color:#EBDF9F;
+    height: 60px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 800px;
+    border: 2px red solid;
+    border-radius: 15px;
+	}
+
+	body {
+	font-family: 'Segoe UI', Tahoma, Helvetica, Arial, sans-serif;
+	height: 100%;
+	width: 90%;
+	margin: 70px;
+	padding: 0;
+	color: #000000; /*black*/
+  background-image: url('../images/parchment.jpg'); 
+  background-repeat: repeat; 
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+/*===============indicates no border around any image ============*/
+body img {
+  /* width: 100%; */
+	border: 0px;
+	text-decoration: none;
+}
+
+/*==============all site links==============*/
+a:link {
+	font-weight: bold;
+	color: red;
+	background: transparent;
+	text-decoration: underline;
+}
+
+a:visited {
+	font-weight: bold;
+	color: purple;
+	background: transparent;
+	padding: 0px;
+	text-decoration: underline wavy rgb(1, 1, 22) 2px;
+}
+
+a:hover {
+	font-weight: bold;
+	text-decoration : none;
+    background: #9da8ce;
+	color: #eee56d;
+}
+
+a:active {
+	font-weight: bold;
+	text-decoration : underline;
+	background: #BFDFE2;
+	color: #726A40;
+}
+
+/* =================Styles for heading tags =============== */
+h1, h2, h3, h4 {
+	color: #485E48; /*dk green*/;
+	background-color: inherit;
+}
+h1 {
+	font-size: 1.5em;
+  text-align: center; 
+  background: #EBDF9F;
+  margin-bottom: 30px;  
+}
+h2 {
+	font-size: 1em;
+}
+h3 {
+  display: flex;
+  justify-content: center;
+	font-size: .9em;
+}
+h4 {
+	font-size: .9em;
+}
+/*============== Styles for footer ===================*/
+#footer {
+	/* border-top: 2px solid #242F24; */
+	clear: both;
+	padding: 5px;
+	text-align: center;
+}
+#footer p {
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+#footer hr {
+  border: none;
+  height: 1px;
+  background-color: black;
+  margin: 10px 0; /* optional spacing */
+}

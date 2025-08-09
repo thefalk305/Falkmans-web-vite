@@ -1,0 +1,63 @@
+<script setup>
+  import BackToTop from "@/components/BackToTop.vue";
+  import MiniNav from "@/components/MiniNav.vue";
+
+
+const   resolveImageUrl = (filename) =>
+  new URL(`../assets/img/${filename}`, import.meta.url).href;
+
+</script>
+
+<template>
+  <div id="liverpool">
+    <MiniNav />
+  <h1 align="center">Liverpool, England</h1>
+
+
+  <div style="display: flex; align-items: center; gap: 80px;">
+    <img :src="resolveImageUrl('Liverpool-1.jpeg')" alt="Liverpool Docks" style="width: 375px; height: 300px">
+    <p >  &#9664◄  Liverpool docks, where immigrants would have boarded the ships leaving to the Americas.
+    <br><br> Immigrants on boat going to the Americas. Around the late 1800's ►&#9654</p>
+    <img :src="resolveImageUrl('Liverpool-2.jpeg')" alt="Passengers on Boat" style="width: 350px; height: 300px">
+  </div>
+
+
+<p>Welcome to Liverpool, England. Liverpool was one of the many ports through which immigrants traveled on their way to American, Canada, and even Australia. During the 1800s and 1900s, Liverpool stood at the heart of global migration, serving as both a departure point for millions seeking new lives abroad and a destination for immigrants drawn by industrial opportunity.  Its prominence as a port city made it a natural hub for transatlantic travel, and by the mid-19th century, Liverpool had earned the title of the <b>largest emigration port in the world.</b></p> 
+<p> The city's role in emigration was especially pronounced during the Irish Potato Famine 
+of the 1840s. Thousands of Irish migrants arrived in Liverpool, many intending to continue on to North America. However, due to 
+illness, poverty, or exploitation, a significant number remained in the city. By 1851, Irish-born residents made up 22.3% of 
+Liverpool's population, and even in 1871, they still accounted for over 15%. These migrants often lived in overcrowded, 
+unsanitary conditions near the docks, contributing to Liverpool’s reputation as the “black spot on the Mersey” due to high 
+rates of disease and poverty3.</p>
+
+<p > Liverpool's emigration infrastructure was vast and complex. Migrants arriving in the 
+city had to navigate a network of licensed passenger brokers, lodging houses, and medical inspections before boarding ships. The 
+Waterloo Dock was a bustling center of activity, with packet ships like the Isaac Webb and Queen of the West ferrying passengers 
+across the Atlantic. Between 1860 and 1900, 4.75 million Europeans sailed from Liverpool to North America, making it the dominant 
+gateway for transatlantic migration.</p>
+
+<p > At the same time, Liverpool absorbed immigrants from across Europe, including Scandinavians, 
+Russians, and Poles, who arrived via rail and sea routes. These newcomers fueled the city's industrial growth but also faced significant 
+challenges. Many worked in low-paid, unskilled jobs and lived in cramped housing, often falling victim to trade depressions and 
+unemployment. Despite these hardships, Liverpool remained a beacon of opportunity, and its docks symbolized both hope and hardship 
+for generations of migrants.</p>
+
+<p > By the early 20th century, Liverpool’s dominance began to wane as other ports like Southampton
+and Bremerhaven rose in prominence. Yet its legacy as a migration powerhouse endures, etched into the stories of millions who passed 
+through its docks in search of a better life. If you’d like, I can share diary excerpts or ship records from this era to bring these 
+journeys to life.</p>
+  </div>
+  <BackToTop />
+</template>
+
+<style>
+
+  b {
+  font-weight: bold !important;
+}
+
+p {
+  text-indent: 1em;
+  text-align: justify;
+}
+</style>

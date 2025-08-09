@@ -1,0 +1,585 @@
+/* @charset "iso-8859-1"; */
+/* falkman.css */
+body {
+	font-family: Tahoma, Helvetica, Arial, sans-serif;
+	margin: 0;
+	padding: 0;
+	background-color: #EBDF9F; /*parchment*/;
+	color: #000000; /*black*/
+}
+/*===============indicates no border around any image ============*/
+body img {
+	border: 0px;
+	text-decoration: none;
+}
+/* ============ margins auto center the container on the page ==========*/
+#container,
+.container {
+	background-color: #ffffff;
+	/* position: static; */
+	top: 00px;
+	margin: 10px;
+	width: 100%;
+	height: fit-content;
+	z-index: 1;
+
+	padding: 0px;
+	width: 95%;
+	padding: 10px;
+}
+
+/*=================== styles for top banner ========================*/
+#banner {
+	/* position: absolute; */
+  /* position: relative; */
+	height: 138px;
+	width: 100%;
+  border: solid black 5px;
+  border-radius: 20px;
+  top: 62px;
+	padding: 1px;
+}
+
+/*.Banner {  
+display: flex; 
+justify-content: center 80%; 
+align-items: center;}*/
+
+/*=================== styles for top menu ======================*/
+#topmenu {
+	background-color: #FFFFFF;
+	text-align: center;
+	font-size: .90em;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	margin-right: 10px;
+	color: inherit;
+	border-top: 2px solid #AB9F5F;
+	border-bottom: 2px solid #AB9F5F;
+}
+#topmenu ul {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+#topmenu li {
+	display: inline;
+	list-style-type: none;
+	padding: 0px;
+	padding-right: 1em;
+}
+/* ==============all site links============== */
+a:link {
+	font-weight: bold;
+	color: #726A40;
+	background: transparent;
+	text-decoration: underline;
+}
+a:visited {
+	font-weight: bold;
+	color: #17150D;
+	background: transparent;
+	padding: 0px;
+	text-decoration: underline;
+}
+a:hover {
+	font-weight: bold;
+	text-decoration : none;
+	background: #393520;
+	color: #ffffff;
+}
+a:active {
+	font-weight: bold;
+	text-decoration : underline;
+	background: #BFDFE2;
+	color: #726A40
+}
+
+/*====================== styles for main content area =========================*/
+#content {
+	/* margin-right: 140px;
+	margin-left: 140px; */
+	padding: 5px;
+	text-align: left;
+	vertical-align: top;
+}
+
+/*===========content area list items==============*/
+/* #content ul li {
+	list-style-image: url('green-bullet-bg.gif');
+	margin: 2px;
+	padding: 2px;
+}
+#content li li {
+	list-style-image: url('green-bullet-sm.gif');
+	padding: 2px 0;
+} */
+
+/* *****************************************************
+Navigation Bar - Right hand side 
+**************************************************** */
+#rightnav {
+	color: #000;
+	padding: 10px 10px 10px 10px;
+	margin: 10px 10px 10px 10px;
+	border: 2px solid #242F24;
+	float: right;
+	background-color: #ffffff;
+	width: 200px;
+	z-index: 22;
+	position: relative;
+
+}
+#rightnav ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	margin-bottom: 4px;
+}
+#rightnav li {
+	list-style: none;
+	padding: 2px 0;
+}
+#rightnav ul li {
+	text-decoration: none;
+	margin-top: 2px;
+}
+#rightnav ul ul li {
+	padding: 3px 0 3px 5px;
+	font-size: 80%;
+	font-weight: normal;
+}
+#rightnav p {
+	font-size: .8em;
+}
+/* *****************************************************
+Navigation Bar - Left hand side 
+**************************************************** */
+
+#leftnav {
+	color: #000;
+	padding: 10px 10px 10px 10px;
+	margin: 10px 10px 10px 10px;
+	border: 2px solid #242F24;
+	float: left;
+	background-color: #ffffff;
+	width: 200px;
+	z-index: 22;
+}
+#leftnav ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	margin-bottom: 4px;
+}
+#leftnav li {
+	list-style: none;
+	padding: 2px 0;
+}
+#leftnav ul li {
+	text-decoration: none;
+	margin-top: 2px;
+}
+#leftnav ul ul li {
+	padding: 3px 0 3px 5px;
+	font-size: 80%;
+	font-weight: normal;
+}
+
+/*============== Styles for footer ===================*/
+#footer {
+	width: 80%;
+	margin: auto;
+	z-index: 1111;
+	border-top: 2px solid #242F24;
+	clear: both;
+	padding: 5px;
+	background-color: rgb(255, 255, 255);
+	text-align: center;
+}
+#footer p {
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+/*================== general styles =================*/
+hr {
+	width: 50%;
+	text-align: center;
+	background-color: #004145;
+	height: 5px;
+}
+/* =================Styles for heading tags =============== */
+h1, h2, h3, h4 {
+	color: #485E48; /*dk green*/
+	background-color: inherit; 
+}
+h1 {
+	font-size: 2em; 
+	background: #EBDF9F; /*lt green */
+}
+h3 {
+	font-size: .9em;
+}
+h4 {
+	font-size: .9em;
+}
+/*================used to center anything==============*/
+.center {
+	text-align: center;
+}
+/* ============floats images to right or left ============*/
+.imgrgt {
+	float: right;
+	padding: 7px;
+}
+.imglft {
+	float: left;
+	padding: 7px;
+}
+
+.smtxt {
+	font-size:small;
+}
+
+.fotoinfo{
+   line-height: 2 ;
+}
+
+
+/*------------------------------------------------------------------------------
+--------------------------- ADDED BY JERRY FALKMAN -----------------------------
+------------------------------------------------------------------------------*/
+
+#bannerimg {
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center; 
+/*	background-image:url('images/family header-22.jpg');
+	class="animate__animated  animate__delay-1s animate__backInDown;  
+*/}
+
+aside.infoaside {
+	right:25px;
+	bottom:180px;
+	width:26%;
+	padding:5px 5px 15px 5px;
+}
+p.p2 {/*secondary (aside) text formatting*/
+	position:relative;
+	margin:15px auto 15px auto;
+	width:95%;
+	display:block;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:0.825em;
+	font-weight:normal;
+	color:black;
+	line-height:150%;
+}
+/* down curve for infopages */
+/* left image container */
+.dncurve_l {
+	position:
+	absolute;
+	height:30px;
+	width: 53px;
+	border-radius:0px 12px 0px 0px;
+	border-right:
+	thin #006600 solid;
+	border-top:
+	thin #006600 solid;
+}
+/* right image containesr */
+.dncurve_r {
+	position:
+	absolute;
+	height:30px;
+	width: 160px;
+	border-radius:0px 12px 0px 0px;
+	border-right:
+	thin #006600 solid;
+	border-top:
+	thin #006600 solid;
+}
+.iupcurve {
+	position:absolute;
+	top:300px;
+	left:35px;
+	height:120px;
+	width:25px;
+	border-radius:0px 0px 0px 12px;
+	border-left:thin #006600 solid;
+	border-bottom:thin #006600 solid;
+}
+
+section.infocontainer {
+	margin: 50px auto 50px auto;
+	padding: 10px;
+	background-color: #ffffff;
+	height: 700px;
+	width:640px;
+	position:
+	relative;
+	margin:35px auto 0px auto;
+	background-color:
+	linen;
+	z-index:2;
+}
+
+#treewindow div.mgroup {
+	position:absolute;
+	width:370px;
+	height:140px;
+	border-radius:12px 24px 84px 24px;
+	border-top:thin #006600 solid;
+	border-left:thin #006600 solid;
+	border-right:thin #006600 solid;
+/*	border-bottom:thick white solid; */
+}
+
+
+/* #treewindow div.topmgroup {
+	position: relative;
+	width:800px;
+	height:140px;
+		border-radius:12px 24px 84px 24px;
+	border-top:thin #006600 solid;
+	border-left:thin #006600 solid;
+	border-right:thin #006600 solid;
+	border-bottom:thick white solid;
+
+	} */
+
+#footerwall {
+	position:absolute;
+	bottom:0px;
+	height:100px;
+	width:1000%;
+	left:-3000px;
+	background-color:#00B200;
+	z-index:0;
+}
+
+.gallery-lightbox-item img {
+    object-fit: cover !important;
+}
+/* main subtitle */
+h4 {
+	position: relative;
+	text-align: center;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size:0.925em;
+	font-weight: bold;
+	color: #006600;
+	line-height: 100%;
+	padding-bottom: 5px;
+} 
+
+#ibline {
+	position:absolute;
+	top:420px;
+	left:60px;
+	height:1px;
+	width:555px;
+	background-color:#cc33ff;
+	box-shadow: 2px 2px 7px rgb(204, 51, 255 0.6);
+	z-index:0;
+}
+
+.auto-style1 {
+  margin-top: 101px;
+}
+.auto-style2 {
+  margin-bottom: 0px;
+}
+/* Drop Caps ========== */
+
+.dropcap {overflow: visible; position: relative; left: auto; text-align: left;}
+.dropcap:first-letter {color: #696829;	display: block; float: left; font: 40px/30px Georgia, Garamond, serif;	padding: 6px 4px 0 0;}
+
+/*------------------------------------------------------------------------------
+--------------------------------ENTRY CONTAINERS--------------------------------
+------------------------------------------------------------------------------*/
+.imagecontainer {/*entry photo container*/
+	position: absolute;
+
+	height: 100px;
+	width: 100px;
+	background-color:#009800;
+	border: thick #006600 solid;
+	box-shadow: 2px 2px 7px rgba(0, 102, 0, 0.7);
+	border-radius:20px 3px 20px 3px;
+	padding:4px;
+	z-index:80;
+}
+.imagecontainer.male {
+	left:-50px;
+	bottom:0px;
+}
+.imagecontainer.female {
+	right:-50px;
+	bottom:0px;
+}
+.imagecontainer:hover {
+	background-color:rgba(0, 178, 0, 0.8);
+	border:thick #00B200 solid;
+	box-shadow:2px 2px 7px rgba(0, 230, 0, 0.7);
+}
+.imagecontainer img {
+	position:
+	relative;
+	width:100px;
+	height:100px;
+	border-radius:12px 2px 12px 2px;
+	transition:
+	all 0.5s ease 0s;
+	-ms-transition:all 0.5s ease 0s;
+	-webkit-transition:all 0.5s ease 0s;
+	border:0;
+	z-index:79;
+}
+.imagecontainer:hover img {
+	box-shadow:
+		0px 0px 25px rgba(0, 102, 0, 0.5);
+	transform:scale(1.25);
+	-ms-transform:scale(1.25);
+	-webkit-transform:scale(1.25);
+	cursor:crosshair;
+}
+.imagecontainer div.desc {/*sliding description tag*/
+	position:absolute;
+	width:200px;
+	background:rgba(0, 0, 0, 0.8);
+	box-shadow:0 0 6px rgba(0, 102, 0, 0.8);
+	transition:all 0.5s ease 0.5s;
+	-ms-transition:all 0.5s ease 0.5s;
+	-webkit-transition:all 0.5s ease 0.5s;
+	opacity:0;
+	visibility:hidden;/*this hides the transparent desc div from mouseovers but Safari will not reveal it on hover...*/
+	z-index:75;
+}
+.imagecontainer div.desc.rightslide {
+	top:10px;
+	right:5px;
+	bottom:auto;
+	left:auto;
+	padding:10px 10px 10px 30px;
+	border-radius:0 8px 8px 0;
+}
+.imagecontainer div.desc.leftslide {
+	top:10px;
+	left:15px;
+	bottom:auto;
+	right:auto;
+	padding:10px 30px 10px 10px;
+	border-radius:8px 0px 0px 8px;
+}
+.imagecontainer div.desc.upslide {
+	top:20px;
+	bottom:auto;
+	width:125px;
+	padding:10px 0px 30px 0px;
+	border-radius:8px 8px 0 0;
+}
+.imagecontainer div.desc p {
+	position:relative;
+	font-size:0.825em;
+	color:white;
+}
+.imagecontainer div.desc p.right {
+	margin:0px 0px 0px 20px;
+	text-align:left;
+}
+.imagecontainer div.desc p.left {
+	margin:0px 20px 0px 0px;
+	text-align:right;
+}
+.imagecontainer div.desc p.center {
+	margin:10px 0px 0px 0px;
+	text-align:center;
+}
+.imagecontainer div.desc a, .imagecontainer div.desc a:visited {
+	font-size:1em;
+	color:#00B200;
+}
+.imagecontainer div.desc a:hover {
+	font-size:1em;
+	color:#00E600;
+}
+.imagecontainer div.desc a:active {
+	font-size:1em;
+	color:#006600;
+}
+.imagecontainer:hover div.desc.rightslide {
+	transform:translate(100%, 0);
+	-ms-transform:translate(100%, 0);
+	-webkit-transform:translate(100%, 0);
+	opacity:1;
+	visibility:visible;/*...Safari users can still reach the info page via the image link*/
+}
+.imagecontainer:hover div.desc.leftslide {
+	transform:translate(-100%, 0);
+	-ms-transform:translate(-100%, 0);
+	-webkit-transform:translate(-100%, 0);
+	opacity:1;
+	visibility:visible;/*...Safari users can still reach the info page via the image link*/
+}
+.imagecontainer:hover div.desc.upslide {
+	transform:translate(0, -100%);
+	-ms-transform:translate(0, -100%);
+	-webkit-transform:translate(0, -100%);
+	opacity:1;
+	visibility:visible;/*...Safari users can still reach the info page via the image link*/
+}
+
+.transportation {
+	width: 100%;
+}
+
+#heading {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.heading-row {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: #EBDF9F;
+}
+
+/* .heading-row h1 {
+  margin: 0;
+  z-index: 1;
+} */
+
+.heading-checkbox {
+  position: absolute;
+  right: 72px;
+  height: 24px;
+  width: 120px;
+  display: flex;
+  align-items: center;
+}
+
+.img-checkbox {
+  position: absolute;
+  right: 278px;
+  height: 24px;
+  width: 120px;
+  display: flex;
+  align-items: center;
+}
+
+#mag {
+	position: absolute;
+  right: 200px;
+  height: 24px;
+  width: 126px;
+  background-color: #EBDF9F;
+	display: none;
+}

@@ -1,0 +1,960 @@
+/*------------------------------------------------------------------------------
+C2Kstudios FAMILY TREE Template 3.0 CSS FILE
+copyright 2014 CLINT ROBERTSON
+WWW.C2KSTUDIOS.COM
+Please use under the following licence:
+You may use, manipulate, or distribute the whole or parts of this template in any way that you wish,
+provided that you keep this and all other copyright information intact and provide access to it
+in your download package or on your website.
+------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------
+----------------------------MAIN STRUCTURAL ELEMENTS----------------------------
+------------------------------------------------------------------------------*/
+* {/*different browsers have different default font sizes. This makes default font size the same across all browsers*/
+	font:
+	normal normal normal 12pt/16px Monospace;/*using em here throws formatting off in FF; keep it 12pt(=16px=1em=100%)*/
+	color:
+	black;
+}
+body {
+	margin:0px;/*meant to fix an IE issue but it's always good to define margins, even if they are 0*/
+	background-color:white;/*white is default anyway; just to show that background color comes from the canvas*/
+	overflow-x:hidden;/*allows for the 100% width footer even on widescreens*/
+}
+/*for cross-browser compatability; certain platforms will not process these HTML5 semantic elements correctly w/o the display being expressly defined*/
+article, aside, figure, footer, header, nav, section {
+	display:block;
+}
+canvas {/*for the Harmonious Background Canvas*/
+	position:fixed;
+	top:0;
+	left:0;
+	background-color:white;
+	z-index:0;
+}
+.clear {/*for floating elements - DO NOT REMOVE!*/
+	clear:both;
+}
+/*------------------------------------------------------------------------------
+FONTS | you need all 4 files; I recommend using absolute urls | font names are Case Sensitive in Firefox
+------------------------------------------------------------------------------*/
+@font-face {
+	font-family:'Carolingia';
+	src:
+		url('../fonts/Carolingia.eot?') format('eot'),
+		url('../fonts/Carolingia.woff') format('woff'),
+		url('../fonts/Carolingia.ttf') format('truetype'),
+		url('../fonts/Carolingia.svg') format('svg');
+	font-weight:normal;
+	font-style:normal;
+}
+@font-face {
+	font-family:'Decker';
+	src:
+		url('../fonts/Decker.eot?') format('eot'),
+		url('../fonts/Decker.woff') format('woff'),
+		url('../fonts/Decker.ttf') format('truetype'),
+		url('../fonts/Decker.svg') format('svg');
+	font-weight:normal;
+	font-style:normal;
+}
+/*------------------------------------------------------------------------------
+----------------------------DEFAULT LINK FORMATTING-----------------------------
+------------------------------------------------------------------------------*/
+/*place custom link formatting here*/
+a:focus {
+	outline:thin dotted;/*placing outline only on :focus allows for cosistant formatting and readability on all inputs across all browsers but :focus MUST come first*/
+}
+a, a:link, a:visited, a:hover, a:active {
+	font-size:1em;
+	font-weight:normal;
+	font-style:normal;
+	text-decoration:none;
+	/* cursor:url(/../../graphics/openhand.cur), pointer; */
+	outline:0;/*removes default yellow link border in Chrome*/
+}
+a.green {/*for white background*/
+	color:#006600;
+}
+a.green:hover {
+	color:#00B200;  /*00B200*/
+	text-shadow:0px 0px 15px rgba(0, 178, 0, 0.6);
+}
+a.green:active {
+	color:white;
+	text-shadow:1px 1px 10px rgba(0, 102, 0, 0.6);
+}
+a.white {/*for green background*/
+	color:white;
+}
+a.white:hover {
+	color:#006600;
+	text-shadow:0px 0px 25px rgba(0, 102, 0, 0.6);
+}
+a.white:active {
+	color:#00B200;
+	text-shadow:0px 0px 25px rgba(255, 255, 255, 0.6);
+}
+a img {
+	border:0;/*removes default image link border in IE*/
+}
+/*------------------------------------------------------------------------------
+--------------------------------FIXED TOP BANNER--------------------------------
+------------------------------------------------------------------------------*/
+#topbanner {
+	position:fixed;
+	top:0px;
+	width:100%;
+	height: 70px;
+	background-color:white;
+	box-shadow:0px 0px 20px 2px white;
+	box-shadow:0px 0px 20px 2px rgba(0, 25, 0, 1.0);
+	z-index:99;
+}
+/*------------------------------------------------------------------------------
+------------------------------------DATELINE------------------------------------
+------------------------------------------------------------------------------*/
+#dateline {
+	position:relative;
+	margin:0px auto 0px auto;
+	width:100%;
+	height: 28px;
+	background-color:#00B200;
+	box-shadow:0px 5px 20px rgba(0, 102, 0, 0.8);
+}
+#email a:link, #email a:visited, #email a:hover, #email a:active {
+	margin-left:25px;
+	float:left;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:0.925em;
+	font-weight:bold;
+	letter-spacing:1px;
+	line-height:200%;
+}
+#date {
+	margin-right:25px;
+	float:right;
+	font-family:Arial, Helvetica, sans-serif;
+	color:white;
+	font-size:0.925em;
+	font-weight:bold;
+	letter-spacing:1px;
+	line-height:200%;
+}
+#date:hover {
+	color:#006600;  /* 006600 */
+	text-shadow:0px 0px 25px rgba(0, 102, 0, 0.6);/* 0, 102, 0, 0.6*/
+
+	cursor:crosshair;
+}
+/*------------------------------------------------------------------------------
+-----------------------------------NAVIGATION-----------------------------------
+------------------------------------------------------------------------------*/
+nav.top {
+	position:relative;
+	margin:0px auto 0px auto;
+	width:100%;
+	text-align:center;
+	z-index:1;
+	/* top: -10px; */
+}
+nav.top a:link, nav.top a:visited, nav.top a:hover, nav.top a:active {
+	position:relative;
+	margin:0px 40px 0px 40px;
+	height:100%;
+	width:4%;
+	display:inline-block;
+	font-family:Decker;
+	font-size:1.125em;
+	letter-spacing:1px;
+	line-height:300%;
+	text-align:center;
+}
+/*------------------------------------------------------------------------------
+-----------------------------MAIN CONTENT CONTAINER-----------------------------
+------------------------------------------------------------------------------*/
+/*
+#container {
+	position: relative;
+	margin:40px auto 1000px auto;
+	width:96%;
+	background-color:linen;
+	z-index:2;
+	top: 61px;
+}
+*/
+/*------------------------------------------------------------------------------
+-------------------------------------HEADER-------------------------------------
+------------------------------------------------------------------------------*/
+header {
+	position: relative;
+	margin:0px auto 50px auto;
+	width:100%;
+	z-index:50;
+	background-color:linen;
+}
+#headerimage {
+	position:absolute;
+	top:0px;
+	left:0px;
+	height:250px;
+	width:250px;
+	background-image:url('../graphics/mainlogo.png');
+	background-size:100%;
+	background-repeat:no-repeat;
+	opacity:1.0;
+}
+#hgroup {/*main title group*/
+	position:relative;
+	margin:75px 15px 0px 0px;
+	/* float:right; */
+	text-align:center;
+}
+h1 {/*main title*/
+	position:relative;
+	margin:0px 0px 0px 0px;
+	/* font-family:Carolingia; */
+	font-size:5em;
+	color:#00B200;
+	text-shadow: 2px 2px 10px rgba(0, 102, 0, 0.8);
+	letter-spacing:1px;
+	line-height:100%;
+}
+h2 {/*main subtitle*/
+	position:relative;
+	margin:15px 0px 0px 300px;
+	margin:15px 0px 0px 0px;
+	font-family:Decker;
+	font-size: 1.0em;
+	color:#006600;
+	text-shadow:1px 1px 7px rgba(0, 178, 0, 0.8);
+	letter-spacing:2px;
+	line-height:125%;
+}
+.sectionline {/*section divider*/
+	position:relative;
+	margin:10px 0px 35px 0px;
+	height:1px;
+	width:50%;
+	background-color:#006600;
+	border-radius:20px;
+	box-shadow: 2px 2px 7px rgba(0, 102, 0, 0.6);
+	z-index:20;
+}
+/*------------------------------------------------------------------------------
+------------------------------MAIN CONTENT ELEMENTS-----------------------------
+------------------------------------------------------------------------------*/
+section.intro {
+	position:relative;
+	margin: 0px auto 0px auto;
+	width:899px;
+	z-index:40;
+	padding-bottom: 20px;
+}
+section.intro img {
+	position:
+	absolute;
+	top: -00px;
+	left: 0px;
+	/* height:500px; */
+	/* width:500px; */
+	display:
+	block;
+	opacity:0.6;
+	z-index:0;
+}
+article.introarticle {
+	position:relative;
+	margin:15px auto 15px 0px;
+	width:55%;
+	float:left;
+	display:inline-block;
+}
+aside {
+	position:
+	absolute;
+	background-color: rgba(0, 102, 0, 0.2);
+	box-shadow: 0px 0px 10px 2px rgba(0, 102, 0, 0.8);
+	border-radius: 5px;
+	padding: 10px 10px 10px 10px;
+	z-index: 99;
+}
+aside.panel {
+	top: 102px;
+	right: 13px;
+	height: 250px;
+	width: 165px;
+	text-align: center;
+}
+.panelleft {
+	position: relative;
+	top: 0px;
+	left: -92px;
+	height:100%;
+	width: 60%;
+	display: block;
+	text-align: center;
+	margin-top: 30px;
+}
+.panelright {
+	position:absolute;
+	top:0px;
+	right: -22px;
+	height:100%;
+	width:50%;
+	display:block;
+	text-align:center;
+	margin-top:30px;
+}
+/*------------------------------------------------------------------------------
+------------------------------MAIN TEXT FORMATTING------------------------------
+------------------------------------------------------------------------------*/
+h3 {/*main heading*/
+	position:relative;
+	margin:10px auto 10px auto;
+	text-align:center;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:1em;
+	font-weight:bold;
+	color:#006600;
+	line-height:100%;
+	padding-bottom:5px;
+}
+h4 {/*main aside heading*/
+	position:
+	relative;
+	text-align:
+	center;
+	font-family:
+	Arial, Helvetica, sans-serif;
+	font-size:0.925em;
+	font-weight:
+	bold;
+	color:#006600;
+	line-height:100%;
+	padding-bottom:5px;
+}
+h4.main {
+	margin:10px auto 10px auto;
+}
+h4.figs {
+	margin:10px auto -15px auto;
+}
+p.p1 {/*primary text formatting*/
+	position:
+	relative;
+	margin:15px auto 15px auto;
+	width:95%;
+	display:
+	block;
+	font-family:
+	Arial, Helvetica, sans-serif;
+	font-size:1em;
+	color:
+	black;
+	line-height: 150%;
+	text-align:
+	justify;
+}
+p.p1 a:link, p.p1 a:visited, p.p1 a:hover, p.p1 a:active {
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:1em;
+}
+p.p2 {/*secondary (aside) text formatting*/
+	position:relative;
+	margin:15px auto 15px auto;
+	width:95%;
+	display:block;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:0.825em;
+	font-weight:normal;
+	color:black;
+	line-height:150%;
+}
+p.p2 a:link, p.p2 a:visited, p.p2 a:hover, p.p2 a:active {
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:1em;
+}
+p.p2 a.nolink {
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:1em;
+	font-weight:normal;
+	color:#006600;
+}
+p.p2 a.nolink:hover, p.p2 a.nolink:active {
+	color:white;
+	text-shadow:0px 0px 10px rgba(0, 102, 0, 0.6);
+	cursor:default;
+}
+/*------------------------------------------------------------------------------
+------------------------------TREE WINDOW ELEMENTS-----------------------------
+------------------------------------------------------------------------------*/
+
+#background {/*this div matched the tree view window size and centers the treepot in the window across all widths*/
+	/* position:relative; */
+	/* margin:0px auto; */
+	display:block;
+	height:100%;
+	width: 100%;
+	/* z-index:0; */
+	overflow:visible;
+}
+#treewindow img.background {
+display:none;
+visibility:hidden;
+}
+#grabber {
+	/*THIS IS THE GRABBER NECESSARY FOR PEP. Simply resize and position to fully encompass the tree*/
+	position: absolute;/* top: 0px; */
+	left:-2400px;
+	height:1800px;
+	width:6000px;
+	background-color:white;
+	z-index:0;
+}
+#treepot {/*the treepot positions the tree in the center of the window. All mgroup inline positioning is based on the treepot position*/
+	position:absolute;
+	margin:0px auto;
+	top:120px;
+	padding:10px;
+	height:200px;
+	width:200px;
+	z-index:100;
+}
+#treewindow div.mgroup {
+	position:absolute;
+	width:370px;
+	height:140px;
+	border-radius:12px 24px 84px 24px;
+	border-top:thin #006600 solid;
+	border-left:thin #006600 solid;
+	border-right:thin #006600 solid;
+/*	border-bottom:thick white solid; */
+}
+#treewindow div.mgroup div.leftwig {
+	position:absolute;
+	top:75px;
+	border-radius:12px 0px 0px 0px;
+	border-top:thin #006600 solid;
+	border-left:thin #006600 solid;
+}
+#treewindow div.mgroup div.rightwig {
+	position:absolute;
+	top:75px;
+	border-radius:0px 12px 0px 0px;
+	border-top:thin #006600 solid;
+	border-right:thin #006600 solid;
+}
+#treewindow div.mgroup div.upcurve1 {
+	position:absolute;
+	right:0px;
+	bottom:-69px;
+	height:100px;
+	width:25px;
+	border-radius:0px 0px 12px 0px;
+	border-right:thin #006600 solid;
+	border-bottom:thin #006600 solid;
+}
+#treewindow div.mgroup div.upcurve2 {
+	position:absolute;
+	left:0px;
+	bottom:-69px;
+	height:100px;
+	width:25px;
+	border-radius:0px 0px 0px 12px;
+	border-left:thin #006600 solid;
+	border-bottom:thin #006600 solid;
+}
+.stline {
+	position:absolute;
+	top:-80px;
+	left:185px;
+	height:80px;
+	width:1px;
+	background-color:#006600;
+	box-shadow:2px 2px 7px rgba(0, 102, 0, 0.6);
+}
+figure {
+	position:absolute;
+	background-color:rgba(0, 102, 0, 0.2);
+	box-shadow: 0px 0px 10px 2px rgba(0, 102, 0, 0.8);
+	border-radius:5px;
+	padding:5px 10px 0px 10px;
+	text-align:center;
+}
+
+figure.boxzero {
+  width: 400px; /* or however wide you want the figure */
+  padding: 1rem;
+  border: 1px solid #ccc; /* optional, for visual clarity */
+  box-sizing: border-box;
+}
+
+figure.boxzero .p2 {
+  word-wrap: break-word;
+  white-space: normal;
+  line-height: 1.6;
+}
+
+
+
+
+/* figure.boxzero {
+	left:-27px;
+	bottom:-425px;
+	width:180px;
+} */
+figure.boxone {
+	top:-50px;
+	left:-375px;
+	width:150px;
+}
+figure.boxtwo {
+	top:-50px;
+	right:-375px;
+	width:150px;
+}
+figure.boxthree {
+	top:1325px;
+	left:0px;
+	width:175px;
+}
+figure.boxfour {
+	top:1325px;
+	right:-1475px;
+	width:175px;
+}
+/*------------------------------------------------------------------------------
+--------------------------------ENTRY CONTAINERS--------------------------------
+------------------------------------------------------------------------------*/
+.imagecontainer {/*entry photo container*/
+	position:
+	absolute;
+	height: 100px;
+	width: 100px;
+	background-color:#009800;
+	border: thick #006600 solid;
+	box-shadow: 2px 2px 7px rgba(0, 102, 0, 0.7);
+	border-radius:20px 3px 20px 3px;
+	padding:4px;
+	z-index:80;
+}
+.imagecontainer.male {
+	left:-50px;
+	bottom:0px;
+}
+.imagecontainer.female {
+	right:-50px;
+	bottom:0px;
+}
+.imagecontainer:hover {
+	background-color:rgba(0, 178, 0, 0.8);
+	border:thick #00B200 solid;
+	box-shadow:2px 2px 7px rgba(0, 230, 0, 0.7);
+}
+.imagecontainer img {
+	position:
+	relative;
+	width:100px;
+	height:100px;
+	border-radius:12px 2px 12px 2px;
+	transition:
+	all 0.5s ease 0s;
+	-ms-transition:all 0.5s ease 0s;
+	-webkit-transition:all 0.5s ease 0s;
+	border:0;
+	z-index:79;
+}
+.imagecontainer:hover img {
+	box-shadow:
+		0px 0px 25px rgba(0, 102, 0, 0.5);
+	transform:scale(1.25);
+	-ms-transform:scale(1.25);
+	-webkit-transform:scale(1.25);
+	cursor:crosshair;
+}
+.imagecontainer div.desc {/*sliding description tag*/
+	position:absolute;
+	width:225px;
+	background:rgba(0, 0, 0, 0.8);
+	box-shadow:0 0 6px rgba(0, 102, 0, 0.8);
+	transition:all 0.5s ease 0.5s;
+	-ms-transition:all 0.5s ease 0.5s;
+	-webkit-transition:all 0.5s ease 0.5s;
+	opacity:0;
+	visibility:hidden;/*this hides the transparent desc div from mouseovers but Safari will not reveal it on hover...*/
+	z-index:75;
+}
+.imagecontainer div.desc.rightslide {
+	top:10px;
+	right:25px;
+	bottom:auto;
+	left:auto;
+	padding:10px 10px 10px 30px;
+	border-radius:0 8px 8px 0;
+}
+.imagecontainer div.desc.leftslide {
+	top:10px;
+	left:25px;
+	bottom:auto;
+	right:auto;
+	padding:10px 30px 10px 10px;
+	border-radius:8px 0px 0px 8px;
+}
+.imagecontainer div.desc.upslide {
+	top:0;
+	bottom:auto;
+	width:125px;
+	padding:10px 0px 30px 0px;
+	border-radius:8px 8px 0 0;
+}
+.imagecontainer div.desc p {
+	position:relative;
+	font-size:0.825em;
+	color:white;
+}
+.imagecontainer div.desc p.right {
+	margin:0px 0px 0px 20px;
+	text-align:left;
+}
+.imagecontainer div.desc p.left {
+	margin:0px 20px 0px 0px;
+	text-align:right;
+}
+.imagecontainer div.desc p.center {
+	margin:10px 0px 0px 0px;
+	text-align:center;
+}
+.imagecontainer div.desc a, .imagecontainer div.desc a:visited {
+	font-size:1em;
+	color:#00B200;
+}
+.imagecontainer div.desc a:hover {
+	font-size:1em;
+	color:#00E600;
+}
+.imagecontainer div.desc a:active {
+	font-size:1em;
+	color:#006600;
+}
+.imagecontainer:hover div.desc.rightslide {
+	transform:translate(100%, 0);
+	-ms-transform:translate(100%, 0);
+	-webkit-transform:translate(100%, 0);
+	opacity:1;
+	visibility:visible;/*...Safari users can still reach the info page via the image link*/
+}
+.imagecontainer:hover div.desc.leftslide {
+	transform:translate(-100%, 0);
+	-ms-transform:translate(-100%, 0);
+	-webkit-transform:translate(-100%, 0);
+	opacity:1;
+	visibility:visible;/*...Safari users can still reach the info page via the image link*/
+}
+.imagecontainer:hover div.desc.upslide {
+	transform:translate(0, -100%);
+	-ms-transform:translate(0, -100%);
+	-webkit-transform:translate(0, -100%);
+	opacity:1;
+	visibility:visible;/*...Safari users can still reach the info page via the image link*/
+}
+/*------------------------------------------------------------------------------
+---------------------------BOTTOM ELEMENTS AND FOOTER---------------------------
+------------------------------------------------------------------------------*/
+footer {
+	position:relative;
+	margin:0px auto 0px auto;
+	height:200px;
+	width:100%;
+	z-index:99;
+}
+#footerwall {
+	position:absolute;
+	bottom:0px;
+	height:200px;
+	width:1000%;
+	left:-3000px;
+	background-color:#00B200;
+	z-index:0;
+}
+/*------------------------------------------------------------------------------
+-------------------------------TO PAGE TOP LINK-------------------------------
+------------------------------------------------------------------------------*/
+#totop {
+	position:relative;
+	margin:0px 60px 0px auto;
+	height:55px;
+	width:55px;
+	top:-23px;
+	background-color:white;
+	box-shadow:0px 0px 10px 0px rgba(0, 102, 0, 0.8);
+	border-radius:35px;
+	text-align:center;
+	z-index:99;
+}
+#totop a:link, #totop a:visited, #totop a:hover, #totop a:active {
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:0.925em;
+	font-weight:bold;
+	line-height:55px;
+	letter-spacing:1px;
+}
+/*------------------------------------------------------------------------------
+-------------------------------PAYPAL DONATE LINK-------------------------------
+------------------------------------------------------------------------------*/
+#dplate {
+	position:relative;
+	margin:-35px auto 0px 40px;
+	height:100px;
+	width:100px;
+	background-color:white;
+	box-shadow:0px 0px 20px rgba(0, 102, 0, 0.8);
+	border-radius:50px;
+	z-index:97;
+}
+/* #donate {
+	position:absolute;
+	left:6px;
+	top:38px;
+	height:25px;
+	width:90px;
+	background-image:url('./graphics/donate1.png');
+	cursor:url(./graphics/openhand.cur), pointer;
+	outline:none;
+	z-index:96;
+} */
+/*------------------------------------------------------------------------------
+-------------------------------BOTTOM EMAIL LINK--------------------------------
+------------------------------------------------------------------------------*/
+#bemail {
+	position:relative;
+	margin:-25px auto 0px 40px;
+	text-align:left;
+}
+#bemail a:link, #bemail a:visited, #bemail a:hover, #bemail a:active {
+	font-family:Decker;
+	font-size:0.925em;
+	font-weight:normal;
+	letter-spacing:1px;
+	line-height:100%;
+}
+/*------------------------------------------------------------------------------
+----------------------------SOCIAL NETWORKING LINKS-----------------------------
+------------------------------------------------------------------------------*/
+#nwk {
+	position:relative;
+	margin:0px auto 0px auto;
+	word-spacing:100px;
+	text-align:center;
+}
+#nwk a:link, #nwk a:visited, #nwk a:hover, #nwk a:active {
+	font-family:Carolingia;
+	font-size:2.285em;
+	font-weight:bold;
+	letter-spacing:1px;
+	line-height:300%;
+}
+/*------------------------------------------------------------------------------
+--------------------------COPYRIGHT LINK AND LEGALS PAGE------------------------
+------------------------------------------------------------------------------*/
+#copyright {
+	position:relative;
+	margin:0px 40px 0px auto;
+	text-align:right;
+	padding-bottom:15px;
+}
+#copyright a:link, #copyright a:visited, #copyright a:hover, #copyright a:active {
+	font-family:Decker;
+	font-size:0.925em;
+	font-weight:normal;
+	letter-spacing:1px;
+	line-height:100%;
+}
+#legals {
+	position:relative;
+	margin:0px auto 0 auto;
+	width:95%;
+	text-align:justify;
+	font-size:1em;
+}
+#closewindow {
+	position:absolute;
+	right:25px;
+	bottom:10px;
+	font-size:0.825em;
+	text-decoration:none;
+}
+#closewindow a:link, #closewindow a:visited, #closewindow a:hover, #closewindow a:active {
+	font-size:1em;
+	text-decoration:none;
+}
+/*------------------------------------------------------------------------------
+-------------------------------------INFO PAGES---------------------------------
+------------------------------------------------------------------------------*/
+section.infocontainer {
+	height:580px;
+	width:640px;
+	position:
+	relative;
+	margin:35px auto 0px auto;
+	background-color:
+	linen;
+	z-index:2;
+}
+figure.hdshot {
+	position:
+	absolute;
+	top:-35px;
+	left:-75px;
+	/* height:100px; */
+	/* width:100px; */
+	background-color:#009800;
+	border: thick #006600 solid;
+	box-shadow: 2px 2px 7px rgba(0, 102, 0, 0.7);
+	border-radius:20px 3px 20px 3px;
+	padding:4px;
+	z-index:1;
+}
+figure.hdshot:hover {
+	border: thick #00B200 solid;
+	box-shadow: 2px 2px 14px rgba(0, 178, 0, 0.5);
+	cursor:crosshair;
+	z-index:1;
+}
+figure.hdshot img {
+	position:
+	relative;
+	width:118px;
+	height:118px;
+	border-radius:12px 2px 12px 2px;
+	border:0;
+}
+article.infoarticle {
+	position:relative;
+	margin:0px auto 0px 100px;
+	top:10px;
+	height:auto;
+	text-align:justify;
+	width:62%;
+}
+article.infoarticle.fpage {
+	width:52%;
+}
+h4.info {
+	margin:5px 0px 0px 0px;
+	letter-spacing:1px;
+	text-align:justify;
+}
+h4.info.black {
+	color:black;
+	font-size:0.875em;
+	margin:5px 0px 0px 0px;
+	text-align:justify;
+}
+p.p1.infotxt {
+	margin:25px 0px 0px 0px;
+	line-height:150%;
+}
+p.p2.infoaside {
+	margin:0px 0px 0px 0px;
+}
+#iline {
+	position:
+	absolute;
+	top:70px;
+	left:35px;
+	height:230px;
+	width:1px;
+	background-color:#006600;
+	box-shadow: 2px 2px 7px rgba(0, 102, 0, 0.6);
+	z-index: 2;
+}
+#iupcurve {
+	position:
+	absolute;
+	top:300px;
+	left:35px;
+	height:120px;
+	width:25px;
+	border-radius:0px 0px 0px 12px;
+	border-left:
+	thin #006600 solid;
+	border-bottom:
+	thin #006600 solid;
+	z-index: 3;
+}
+#ibline {
+	position:absolute;
+	top:420px;
+	left:60px;
+	height:1px;
+	width:555px;
+	background-color:#006600;
+	box-shadow: 2px 2px 7px rgba(0, 102, 0, 0.6);
+	z-index:0;
+}
+.imagecontainer.infopic {
+	height:75px;
+	width:75px;
+	top:448px;
+	border:
+	medium #006600 solid;
+}
+.imagecontainer.infopic:hover {
+	background-color:rgba(0, 178, 0, 0.8);
+	border:medium #00B200 solid;
+	box-shadow:2px 2px 7px rgba(0, 230, 0, 0.7);
+}
+.imagecontainer.infopic img {
+	width:75px;
+	height:75px;
+}
+.stline.stinfo {
+	top:-30px;
+	left:40px;
+	height:30px;
+	width:1px;
+	background-color:#006600;
+	box-shadow:2px 2px 7px rgba(0, 102, 0, 0.6);
+}
+aside.infoaside {
+	right:25px;
+	/* bottom:190px; */
+	width:16%;
+	padding:5px 5px 15px 5px;
+}
+aside.fpageaside {
+	right:25px;
+	top:200px;
+	width:25%;
+	padding:5px 5px 15px 5px;
+}
+#closewindow {
+	position:absolute;
+	right:15px;
+	bottom:15px;
+	font-size:0.825em;
+	text-decoration:none;
+}
+#familysearch {
+	position:absolute;
+	right:150px;
+	bottom:15px;
+	font-size:0.825em;
+	text-decoration:none;
+}
+/*------------------------------------------------------------------------------
+-----------------------------MISCELLANEOUS ELEMENTS-----------------------------
+------------------------------------------------------------------------------*/
+#eggie {/*this is for the Harmonious Background Canvas Easter Egg and can be removed if desired*/
+	position:absolute;
+	bottom:-70px;
+	right:175px;
+	width:50%;
+	font-family:Decker;
+	font-size:0.925em;
+	font-weight:normal;
+	color:rgba(0, 0, 0, 1);
+	text-align:center;
+}

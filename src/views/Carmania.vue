@@ -1,16 +1,54 @@
 <script setup>
-import BackToTop from "@/components/BackToTop.vue";
-const   resolveImageUrl = (filename) =>
-  new URL(`../assets/img/${filename}`, import.meta.url).href;
+  import { ref, watch } from 'vue';
+  import {
+    toggleMagnifier,
+    defaultMagConfig
+  } from '@/assets/js/magnifier.js';
+
+  const resolveImageUrl = (filename) =>
+    new URL(`../assets/img/${filename}`, import.meta.url).href;
+
+  const magEnabled = ref(false);
+
+  watch(magEnabled, (enabled) => {
+    toggleMagnifier(enabled, defaultMagConfig);
+  });
+    const pageTitle = "R.M.S. Carmania"
 
 </script>
 
 <template>
-<div id="heading">
+  <!-- Inserts the common header -->
+  <div id="heading">
 
-   <h1 >R.M.S. Carmania</h1>
+    <div class="heading-row">
+      <h1>{{pageTitle}}</h1>
+
+      <label class="heading-checkbox">
+        <input
+          type="checkbox"
+          id="mag-checkbox"
+          class="myCheckbox"
+          v-model="magEnabled"
+        />
+        Enable Mag
+      </label>
+
+      <input
+        type="text"
+        id="mag"
+        class="myMag"
+        placeholder="Mag Value (2)"
+        v-show="magEnabled"
+      />
+    </div>
    <p>This is the ship that Adolfina Chytra traveled on from Liverpool, England to America (New York city).</p>
-  <img border="0" :src="resolveImageUrl('SSCarmania.jpg')" width="411" height="275">
+
+    <div class="img-magnifier-container" >
+      <img class="magImage" 
+    :src="resolveImageUrl('SSCarmania.jpg')" width="822" height="550"/>
+    </div>
+  
   <p >R.M.S. Carmania. From Liverpool To New York, via South Hampton.</p>
 
   <div id="content">
@@ -53,11 +91,11 @@ const   resolveImageUrl = (filename) =>
     <p >Here is the </p>
       <AppLink 
         to="/ChytraPL"
-        
         style="left:  4px; 
         position:relative;
         background-color: rgba(255, 255, 0, 1.0);"> Carmania's passenger list. 
-      </AppLink> <p>You'll find Adolfina about half-way down the page.</p>
+      </AppLink> 
+      <p>You'll find Adolfina about half-way down the page.</p>
   </div>
 
 </div>

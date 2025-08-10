@@ -31,7 +31,7 @@
     { route: "Norden", text: "S.S. Norden" },
     { route: "Trave", text: "S.S. Trave" },
     { route: "Carmania", text: "R.M.S. Carmania" },
-    { route: "/", text: "Sub Heading u6" },
+    { route: "Samaria", text: "S.S. Samaria" },
   ]);
   const lrList = ref([
     { route: "HeadStones", text: "Head Stones" },

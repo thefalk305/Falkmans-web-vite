@@ -1,27 +1,57 @@
-<script>
-  import BackToTop from "@/components/BackToTop.vue";
-  import MiniNav from "@/components/MiniNav.vue";
+<script setup>
+  import { ref, watch } from 'vue';
+  import {
+    toggleMagnifier,
+    defaultMagConfig
+  } from '@/assets/js/magnifier.js';
 
-  export default {
-    components: {
-      BackToTop,
-      MiniNav,
-    },
-  };
+  const resolveImageUrl = (filename) =>
+    new URL(`../assets/img/${filename}`, import.meta.url).href;
+
+  const magEnabled = ref(false);
+
+  watch(magEnabled, (enabled) => {
+    toggleMagnifier(enabled, defaultMagConfig);
+  });
+    const pageTitle = "S.S. Trave"
+
 </script>
 
 <template>
-  <div class="transportation">
-    <MiniNav />
-    <h1 align="center">S.S. Trave</h1>
+  <!-- Inserts the common header -->
+  <div id="heading">
+
+    <div class="heading-row">
+      <h1>{{pageTitle}}</h1>
+
+      <label class="heading-checkbox">
+        <input
+          type="checkbox"
+          id="mag-checkbox"
+          class="myCheckbox"
+          v-model="magEnabled"
+        />
+        Enable Mag
+      </label>
+
+      <input
+        type="text"
+        id="mag"
+        class="myMag"
+        placeholder="Mag Value (2)"
+        v-show="magEnabled"
+      />
+    </div>
     <p class="dropcap">
       This is the ship that Karin traveled on from Bremen, Germany to America (New York
       city).
     </p>
-    <p align="center">
-      <img border="0" src="@/assets/img/trave.jpg" width="411" height="275" />
-    </p>
-    <p align="center">SS Trave. From Bremen To New York, via South Hampton.</p>
+
+    <div class="img-magnifier-container" >
+      <img class="magImage" 
+      src="@/assets/img/trave.jpg" width="822" height="550" />
+    </div>
+      <p >SS Trave. From Bremen To New York, via South Hampton.</p>
   </div>
   <BackToTop />
 </template>

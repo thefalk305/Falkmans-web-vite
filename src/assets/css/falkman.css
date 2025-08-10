@@ -99,8 +99,8 @@ a:active {
 
 /*====================== styles for main content area =========================*/
 #content {
-	/* margin-right: 140px;
-	margin-left: 140px; */
+	margin-right: 140px;
+	margin-left: 140px;
 	padding: 5px;
 	text-align: left;
 	vertical-align: top;
@@ -573,13 +573,4 @@ h4 {
   width: 120px;
   display: flex;
   align-items: center;
-}
-
-#mag {
-	position: absolute;
-  right: 200px;
-  height: 24px;
-  width: 126px;
-  background-color: #EBDF9F;
-	display: none;
 }

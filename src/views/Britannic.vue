@@ -52,16 +52,16 @@
       height="266" />
     </div>
     <p >H.M.S. Britannic. From Liverpool To New York city, direct.</p>
-    <AppLink 
-      to="/BritannicPL"
-      style="position: relative; left: -220px; top: 1373px; width: 236px; height: 24px;  
-      background-color: rgba(255, 255, 0, 0.1); z-index: 9999;"> 
-    </AppLink>
 
-    <div class="img-magnifier-container" >
-      <img class="magImage" 
-      :src="resolveImageUrl('brit2.jpg')" style="width: 680px; height: 2878px" alt="SS Romeo" />
+    <div id="lnkcont" style="position: relative;">
+      <AppLink 
+        to="/BritannicPL" style="position: absolute; left: 0%; top: 46.8%; width: 34%; height: .8%; background-color: rgba(255, 0, 0, 0.5); ">
+      </AppLink>
+
+      <div class="img-magnifier-container" >
+        <img class="magImage" 
+        :src="resolveImageUrl('brit2.jpg')" style="width: 680px; height: 2878px" alt="SS Romeo" />
+      </div>
     </div>
-
   </div>
 </template>

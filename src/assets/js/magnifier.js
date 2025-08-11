@@ -1,5 +1,6 @@
 let attachedImages = new WeakMap();
 let magnifierGlasses = new Map();
+let resizeObserver = null;
 
 export const defaultMagConfig = {
   checkboxID: 'mag-checkbox',
@@ -36,43 +37,45 @@ export function setupMagnifier({
     glass.style.pointerEvents = 'none';
     img.parentElement.insertBefore(glass, img);
 
-    const rect = img.getBoundingClientRect();
+    const updateBackgroundSize = () => {
+      const rect = img.getBoundingClientRect();
+      glass.style.backgroundSize = `${rect.width * currentZoom}px ${rect.height * currentZoom}px`;
+    };
+
     glass.style.backgroundImage = `url('${img.src}')`;
     glass.style.backgroundRepeat = 'no-repeat';
-    glass.style.backgroundSize = `${rect.width * currentZoom}px ${rect.height * currentZoom}px`;
+    updateBackgroundSize();
 
     magnifierGlasses.set(img, glass);
 
-const moveMagnifier = (e) => {
-  e.preventDefault();
+    const moveMagnifier = (e) => {
+      e.preventDefault();
 
-  const rect = img.getBoundingClientRect();
-  const x = e.clientX - rect.left;
-  const y = e.clientY - rect.top;
+      const rect = img.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
 
-  if (x < 0 || y < 0 || x > rect.width || y > rect.height) {
-    glass.style.display = 'none';
-    return;
-  }
+      if (x < 0 || y < 0 || x > rect.width || y > rect.height) {
+        glass.style.display = 'none';
+        return;
+      }
 
-  glass.style.display = 'block';
+      glass.style.display = 'block';
 
-  const w = glass.offsetWidth / 2;
-  const h = glass.offsetHeight / 2;
+      const w = glass.offsetWidth / 2;
+      const h = glass.offsetHeight / 2;
 
-  const clampedX = Math.max(w / currentZoom, Math.min(x, rect.width - w / currentZoom));
-  const clampedY = Math.max(h / currentZoom, Math.min(y, rect.height - h / currentZoom));
+      const clampedX = Math.max(w / currentZoom, Math.min(x, rect.width - w / currentZoom));
+      const clampedY = Math.max(h / currentZoom, Math.min(y, rect.height - h / currentZoom));
 
-  // Position glass relative to image container
-  glass.style.left = `${clampedX + img.offsetLeft - w}px`;
-  glass.style.top = `${clampedY + img.offsetTop - h}px`;
+      glass.style.left = `${clampedX + img.offsetLeft - w}px`;
+      glass.style.top = `${clampedY + img.offsetTop - h}px`;
 
-  // ✅ Use rendered size for background position
-  const bgX = (clampedX / rect.width) * (rect.width * currentZoom) - w;
-  const bgY = (clampedY / rect.height) * (rect.height * currentZoom) - h;
+      const bgX = (clampedX / rect.width) * (rect.width * currentZoom) - w;
+      const bgY = (clampedY / rect.height) * (rect.height * currentZoom) - h;
 
-  glass.style.backgroundPosition = `-${bgX}px -${bgY}px`;
-};
+      glass.style.backgroundPosition = `-${bgX}px -${bgY}px`;
+    };
 
     img.addEventListener('mousemove', moveMagnifier);
     img.addEventListener('touchmove', moveMagnifier, { passive: false });
@@ -81,6 +84,17 @@ const moveMagnifier = (e) => {
       mouse: moveMagnifier,
       touch: moveMagnifier
     });
+
+    // Observe resize for this image
+    if (!resizeObserver) {
+      resizeObserver = new ResizeObserver(() => {
+        magnifierGlasses.forEach((glass, img) => {
+          const rect = img.getBoundingClientRect();
+          glass.style.backgroundSize = `${rect.width * currentZoom}px ${rect.height * currentZoom}px`;
+        });
+      });
+    }
+    resizeObserver.observe(img);
   });
 
   zoomInput?.addEventListener('input', (e) => {
@@ -96,6 +110,11 @@ const moveMagnifier = (e) => {
 export function removeMagnifiers() {
   document.querySelectorAll('.img-magnifier-glass').forEach(glass => glass.remove());
   magnifierGlasses.clear();
+
+  if (resizeObserver) {
+    resizeObserver.disconnect();
+    resizeObserver = null;
+  }
 }
 
 export function toggleMagnifier(enabled, config = defaultMagConfig) {

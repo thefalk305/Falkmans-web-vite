@@ -73,7 +73,7 @@
     <AppLink to="/AboutView">About</AppLink> |
     <AppLink to="/FigureSlide">FigureSlide</AppLink>
     <div id="clock">
-      <div class="date">{{ clocktext }}</div>
+    <div class="date">{{ clocktext }}</div>
     </div>
   </div>
 </template>
@@ -89,6 +89,7 @@ Applink {
     border-bottom: 2px solid #00ff80;
   }
   .date {
-    color: rgb(247, 240, 232);
+    color: #000;
+    font-weight: bold;
   }
 </style>

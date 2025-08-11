@@ -71,6 +71,10 @@ align-items: center;}*/
 	padding-right: 1em;
 }
 /* ==============all site links============== */
+a {
+	z-index: 9999;
+}
+
 a:link {
 	font-weight: bold;
 	color: #726A40;
